@@ -1,12 +1,7 @@
 # Arctyk Docs
 
 [![Deploy Arctyk Docs](https://github.com/Arctyk-ITSM/arctyk-docs/actions/workflows/deploy.yml/badge.svg)](https://github.com/Arctyk-ITSM/arctyk-docs/actions/workflows/deploy.yml)
-COLOR="blue"
-[[ "$VERSION" == *alpha* ]] && COLOR="orange"
-[[ "$VERSION" == *beta* ]] && COLOR="yellow"
-[[ "$VERSION" == *rc* ]] && COLOR="lightgrey"
-[[ "$VERSION" == [0-9]* ]] && COLOR="brightgreen"
-BADGE_URL="https://img.shields.io/badge/docs-${VERSION// /%20}-${COLOR}"
+![Docs Version](https://img.shields.io/badge/docs-v0.7.0--alpha.0-blue)
 [![Docs Online](https://img.shields.io/badge/docs-live-blue.svg)](https://arctyk-itsm.github.io/arctyk-docs/)
 
 This repository contains the official documentation for **Arctyk ITSM**, a modular IT service management platform.
