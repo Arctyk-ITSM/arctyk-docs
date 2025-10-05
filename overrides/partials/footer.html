@@ -1,4 +1,13 @@
 <div class="md-footer__inner">
-    <p>© {{ config.site_name }} — Version {{ config.extra.version.number }}</p>
+    <div class="md-footer__content">
+      <p>
+        © {{ config.site_name }}
+        {% if config.extra.version.number %} — Version {{ config.extra.version.number }}{% endif %}
+      </p>
+  
+      {% if config.extra.build_date %}
+        <p>Last updated: {{ config.extra.build_date | replace("T", " ") | replace("Z", " UTC") }}</p>
+      {% endif %}
+    </div>
   </div>
   

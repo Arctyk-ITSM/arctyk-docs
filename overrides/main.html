@@ -1,5 +1,9 @@
 {% extends "base.html" %}
+{% import "macros/time.html" as time %}
 
+{% macro datetimeformat(value, format="%B %d, %Y") -%}
+  {{ value | strftime(format) }}
+{%- endmacro %}
 {% block site %}
   {% include "partials/version-banner.html" %}
   {{ super() }}

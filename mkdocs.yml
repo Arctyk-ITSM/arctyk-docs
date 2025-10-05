@@ -8,7 +8,7 @@ site_version: 0.7.0-alpha.0
 
 theme:
   name: material
-  logo: assets/logo.svg
+  logo: assets/ArctykITSM-Logo.png
   favicon: assets/favicon.ico
   features:
     - navigation.instant
@@ -72,3 +72,5 @@ extra:
       text: "v0.7.0-alpha.0"
       color: "blue"
     banner: "This is documentation for an alpha release. Features may change before the final release."
+    extra_css:
+    - assets/custom.css
