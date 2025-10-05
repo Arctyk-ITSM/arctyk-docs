@@ -22,9 +22,30 @@ jobs:
         with:
           python-version: '3.13'
 
+      - name: Cache pip packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+
       - name: Install dependencies
         run: |
           pip install mkdocs mkdocs-material
+
+          - name: Ensure gh-pages branch exists
+          run: |
+            if ! git ls-remote --exit-code origin gh-pages; then
+              echo "No gh-pages branch found — creating one..."
+              mkdocs gh-deploy --force
+              echo "gh-pages branch created successfully."
+            else
+              echo "gh-pages branch already exists, proceeding with normal deploy."
+            fi
+      - name: Build and deploy documentation
+        run: mkdocs gh-deploy --force
 
       - name: Build and deploy docs
         run: mkdocs gh-deploy --force
