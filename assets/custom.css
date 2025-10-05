@@ -1,0 +1,16 @@
+.md-footer__content p {
+  font-size: 0.8rem;
+  color: var(--md-default-fg-color--light);
+  margin: 0;
+  text-align: center;
+}
+
+.md-footer__content a {
+  color: var(--md-primary-fg-color);
+  text-decoration: none;
+}
+
+.md-footer__content a:hover {
+  text-decoration: underline;
+}
+
