@@ -1,0 +1,30 @@
+name: Deploy Arctyk ITSM Docs
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # Allow manual runs from the GitHub Actions tab
+
+permissions:
+  contents: write  # Needed for pushing to gh-pages
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: |
+          pip install mkdocs mkdocs-material
+
+      - name: Build and deploy docs
+        run: mkdocs gh-deploy --force
