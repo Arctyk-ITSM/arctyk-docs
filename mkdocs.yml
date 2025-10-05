@@ -2,7 +2,7 @@ site_name: Arctyk Docs
 site_url: https://docs.arctyk.dev
 site_author: Arctyk Team
 repo_url: https://github.com/arctyk-itsm/arctyk-itsm
-repo_name: Arctyk ITSM
+repo_name: Arctyk Docs
 edit_uri: edit/main/docs/
 site_version: 0.7.0-alpha.0
 
@@ -57,8 +57,8 @@ nav:
       - Testing: developer-guide/testing.md
       - Changelog: developer-guide/changelog.md
   - Design:
-      - Branding: branding.md
-      - UI Components: ui-components.md
+      - Branding: design/branding.md
+      - UI Components: design/ui-components.md
   - Integrations:
       - Jira: integrations/jira.md
       - Zendesk: integrations/zendesk.md

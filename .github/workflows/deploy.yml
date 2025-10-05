@@ -43,7 +43,7 @@ jobs:
         id: extract_version
         run: |
           echo "Extracting version from mkdocs.yml..."
-          VERSION=$(python -c "import yaml; print(yaml.safe_load(open('mkdocs.yml')).get('site_version', 'unknown'))")
+          VERSION=$(python -c "import yaml; print(yaml.safe_load(open('mkdocs.yml')).get('extra', {}).get('version', {}).get('number', 'unknown'))")
           echo "docs_version=$VERSION" >> $GITHUB_OUTPUT
           echo "Docs version: $VERSION"
 
@@ -71,7 +71,7 @@ jobs:
           BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
           echo "Build date: $BUILD_DATE"
           echo "extra:
-            Sbuild_date: \"$BUILD_DATE\"" >> extra_timestamp.yml
+            build_date: "$BUILD_DATE"" >> extra_timestamp.yml
           yq eval-all 'select(fileIndex == 0) * select(fileIndex == 1)' mkdocs.yml extra_timestamp.yml > mkdocs_temp.yml
           mv mkdocs_temp.yml mkdocs.yml
 
