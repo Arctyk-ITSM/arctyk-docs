@@ -1,65 +1,91 @@
-# Welcome to Arctyk Docs
+# Overview
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## About Arctyk ITSM
 
-## Commands
+**Arctyk ITSM** is a modular, enterprise-grade IT Service Management platform designed to streamline IT operations for organizations of all sizes.  
+Built with Django and modern open-source technologies, it combines flexibility, scalability, and maintainability into a single unified solution.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+Arctyk ITSM emphasizes modular architecture, allowing you to enable or disable specific applications—such as ticketing, asset management, or reporting—without affecting the core system.  
+This approach makes it ideal for teams that want to start small and expand functionality over time.
 
-## Project layout
-This is the current project layout with Docker. 
+---
 
-```bash
-arctyk/
-├── docker/                     # Docker-related files
-│   ├── web.Dockerfile          # Django + Gunicorn container
-│   └── db.Dockerfile           # (optional) custom Postgres container
-├── docker-compose.yml          # Compose setup for services
-├── .env                        # Environment variables (not committed)
-├── requirements.txt            # Python dependencies
-├── STATIC_SRC/                 # SCSS/JS assets
-│   ├── scss/
-│   └── css/
-├── src/                        # Django source
-│   ├── manage.py
-│   ├── helpdesk/               # Main Django project (settings, asgi, wsgi)
-│   ├── tickets/                # Ticketing app
-│   ├── users/                  # User management app
-│   ├── projects/               # Project tracking app
-│   ├── inventory/              # Asset inventory app
-│   └── reports/                # Reporting app
-├── media/                      # Uploaded files (mounted in container)
-└── static/                     # Collected static files (mounted in container)
-```
+## Key Features
 
-This is the project documentation layout:
+### Modular Design
+Each component of Arctyk ITSM (Tickets, Users, Assets, Reports, etc.) operates independently, allowing easy customization and deployment.
 
-```bash
-    mkdocs.yml    # The configuration file.
-    docs/
-    ├── index.md
-    ├── getting-started/
-    │    ├── installation.md
-    │    ├── configuration.md
-    │    └── deployment.md
-    ├── user-guide/
-    │    ├── tickets.md
-    │    ├── assets.md
-    │    ├── reports.md
-    ├── developer-guide/
-    │    ├── architecture.md
-    │    ├── api-reference.md
-    │    ├── contributing.md
-    │    ├── testing.md
-    │    └── changelog.md
-    ├── design/
-    │    ├── ui-components.md
-    │    └── branding.md
-    └── integrations/
-        ├── jira.md
-        ├── zendesk.md
-        └── power-platform.md
-```
+### Docker-Ready
+The platform runs seamlessly in containerized environments. A full Docker Compose configuration is provided for quick setup and deployment.
+
+### PostgreSQL Backend
+Leverages PostgreSQL for robust data management and high-performance querying.
+
+### Django Framework
+Powered by Django, providing a secure, extensible foundation and full compatibility with enterprise-grade authentication and middleware.
+
+### Responsive UI
+The front end follows modern design practices and integrates easily with Bootstrap 5 for a consistent and accessible user experience.
+
+### Integration-Ready
+Arctyk ITSM can integrate with third-party tools such as Jira, Zendesk, or custom REST APIs, supporting a connected IT ecosystem.
+
+---
+
+## Project Goals
+
+1. Deliver a modular and maintainable ITSM solution.
+2. Provide a developer-friendly architecture using Django best practices.
+3. Support automated deployment and CI/CD workflows.
+4. Enable comprehensive documentation for each release version.
+5. Maintain transparency and traceability through changelogs and audit features.
+
+---
+
+## Repository Structure
+
+Arctyk ITSM is composed of multiple repositories for scalability and clean separation of concerns:
+
+| Repository | Purpose |
+|-------------|----------|
+| **arctyk-itsm** | Main Django application and backend services. |
+| **arctyk-docs** | Documentation and versioned release guides. |
+| **arctyk-ui** | Optional frontend or UI modules (if separated). |
+| **arctyk-deploy** | Deployment configurations (Docker, CI/CD pipelines). |
+
+---
+
+## Documentation Philosophy
+
+Arctyk Docs follows the [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) standard for structure and readability.  
+Documentation is built to be version-aware, ensuring users can always reference the correct guides for their deployed version.
+
+Each release includes:
+
+- Installation and configuration instructions
+- Deployment and update guides
+- Developer best practices
+- Release notes and version changelogs
+
+---
+
+## Getting Started
+
+To begin exploring Arctyk ITSM, start with these guides:
+
+- [Installation Guide](getting-started/installation.md)
+- [Configuration Guide](getting-started/configuration.md)
+- [Deployment Guide](getting-started/deployment.md)
+
+---
+
+## License and Contributions
+
+Arctyk ITSM is released under the **MIT License**. Contributions are welcome and encouraged.  
+Developers can submit pull requests for both the core platform and documentation repositories.  
+For contribution guidelines, see the `CONTRIBUTING.md` file in each repository.
+
+---
+
+**Current Version:** v0.7.0-alpha.0  
+**Documentation Source:** [https://github.com/Arctyk-ITSM/arctyk-docs](https://github.com/Arctyk-ITSM/arctyk-docs)
