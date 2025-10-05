@@ -53,6 +53,7 @@ nav:
       - Contributing: developer-guide/contributing.md
       - Style Guide: developer-guide/style-guide.md
       - Markdown Examples: developer-guide/markdown-examples.md
+      - GitHub: developer-guide/github.md
       - Testing: developer-guide/testing.md
       - Changelog: developer-guide/changelog.md
   - Design:

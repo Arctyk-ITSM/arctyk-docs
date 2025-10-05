@@ -1,51 +1,72 @@
 name: Deploy Arctyk ITSM Docs
 
 on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:  # Allow manual runs from the GitHub Actions tab
+    push:
+        branches:
+            - main
+    workflow_dispatch: # Allow manual runs from the GitHub Actions tab
 
 permissions:
-  contents: write  # Needed for pushing to gh-pages
+    contents: write # Needed for pushing to gh-pages
 
 jobs:
-  build-deploy:
-    runs-on: ubuntu-latest
+    build-deploy:
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.13'
+            - name: Set up Python
+              uses: actions/setup-python@v5
+              with:
+                  python-version: "3.13"
 
-      - name: Cache pip packages
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
+            - name: Cache pip packages
+              uses: actions/cache@v4
+              with:
+                  path: ~/.cache/pip
+                  key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+                  restore-keys: |
+                      ${{ runner.os }}-pip-
 
+                          - name: Extract version from mkdocs.yml
+                          id: extract_version
+                          run: |
+                            echo "Extracting version from mkdocs.yml..."
+                            VERSION=$(python -c "import yaml; print(yaml.safe_load(open('mkdocs.yml')).get('site_version', 'unknown'))")
+                            echo "docs_version=$VERSION" >> $GITHUB_OUTPUT
+                            echo "📘 Docs version: $VERSION"
 
-      - name: Install dependencies
-        run: |
-          pip install mkdocs mkdocs-material
+                        - name: Update version badge
+                          run: |
+                            VERSION=${{ steps.extract_version.outputs.docs_version }}
+                            BADGE_URL="https://img.shields.io/badge/docs-${VERSION// /%20}-blue"
+                            echo "Updating version badge for ${VERSION}"
+                            sed -i "s|!\[Docs Version\](https://img.shields.io/badge/docs-.*-blue)|![Docs Version](${BADGE_URL})|" README.md || true
 
-          - name: Ensure gh-pages branch exists
-          run: |
-            if ! git ls-remote --exit-code origin gh-pages; then
-              echo "No gh-pages branch found — creating one..."
-              mkdocs gh-deploy --force
-              echo "gh-pages branch created successfully."
-            else
-              echo "gh-pages branch already exists, proceeding with normal deploy."
-            fi
-      - name: Build and deploy documentation
-        run: mkdocs gh-deploy --force
+                        - name: Commit version badge update
+                          run: |
+                            git config user.name "github-actions[bot]"
+                            git config user.email "github-actions[bot]@users.noreply.github.com"
+                            git add README.md
+                            git diff --quiet && echo "No badge change detected" || git commit -m "docs: update version badge to ${{ steps.extract_version.outputs.docs_version }}"
+                            git push origin main || true
+            - name: Install dependencies
+              run: |
+                  pip install mkdocs mkdocs-material
 
-      - name: Build and deploy docs
-        run: mkdocs gh-deploy --force
+                  - name: Ensure gh-pages branch exists
+                  run: |
+                    if ! git ls-remote --exit-code origin gh-pages; then
+                      echo "No gh-pages branch found — creating one..."
+                      mkdocs gh-deploy --force
+                      echo "gh-pages branch created successfully."
+                    else
+                      echo "gh-pages branch already exists, proceeding with normal deploy."
+                    fi
+            - name: Build and deploy documentation
+              run: mkdocs gh-deploy --force
+
+            - name: Build and deploy docs
+              run: mkdocs gh-deploy --force
