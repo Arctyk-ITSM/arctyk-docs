@@ -20,7 +20,7 @@ We welcome all contributions, whether it’s code, documentation, design, or ide
 
 ## How to Get Involved
 There are many ways to contribute:
-- Participate in [GitHub Discussions](https://github.com/Arctyk-ITSM/community/discussions).
+- Participate in [GitHub Discussions](https://github.com/orgs/Arctyk-ITSM/discussions).
 - Report bugs and request features via [Issues](https://github.com/Arctyk-ITSM/arctyk-itsm/issues).
 - Contribute code, docs, or tests with pull requests.
 - Share your use cases and feedback to guide our roadmap.
@@ -28,7 +28,7 @@ There are many ways to contribute:
 ---
 
 ## Discussions
-Use [Discussions](https://github.com/Arctyk-ITSM/community/discussions) for:
+Use [Discussions](https://github.com/orgs/Arctyk-ITSM/discussions) for:
 - Asking questions
 - Brainstorming new features
 - Reviewing the roadmap
