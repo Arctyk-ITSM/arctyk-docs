@@ -2,10 +2,12 @@
 
 ## About Arctyk ITSM
 
-**Arctyk ITSM** is a modular, enterprise-grade IT Service Management platform designed to streamline IT operations for organizations of all sizes.  
+**Arctyk ITSM** is a modular, enterprise-grade IT Service Management platform designed to streamline IT operations for organizations of all sizes. 
+
 Built with Django and modern open-source technologies, it combines flexibility, scalability, and maintainability into a single unified solution.
 
 Arctyk ITSM emphasizes modular architecture, allowing you to enable or disable specific applications—such as ticketing, asset management, or reporting—without affecting the core system.  
+
 This approach makes it ideal for teams that want to start small and expand functionality over time.
 
 ---
