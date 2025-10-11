@@ -4,7 +4,6 @@ site_author: Arctyk Team
 repo_url: https://github.com/arctyk-itsm/arctyk-itsm
 repo_name: Arctyk Docs
 edit_uri: edit/main/docs/
-site_version: 0.7.0-alpha.0
 
 theme:
   name: material
