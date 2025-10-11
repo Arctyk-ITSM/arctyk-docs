@@ -15,14 +15,18 @@ theme:
     - navigation.tracking
     - navigation.top
     - navigation.path
+    - navigation.footer
     - search.highlight
     - search.suggest
     - content.code.annotate
-    - navigation.footer
   palette:
     - scheme: default
       primary: blue
       accent: cyan
+
+# Optional: add custom CSS here
+extra_css:
+  - assets/custom.css
 
 markdown_extensions:
   - admonition
@@ -35,6 +39,13 @@ markdown_extensions:
   - def_list
   - codehilite
   - attr_list
+
+plugins:
+  - search
+  - minify
+  - git-revision-date-localized:
+      enable_creation_date: true
+      fallback_to_build_date: true
 
 nav:
   - Overview: index.md
@@ -72,5 +83,6 @@ extra:
       text: "v0.7.0-alpha.0"
       color: "blue"
     banner: "This is documentation for an alpha release. Features may change before the final release."
-    extra_css:
-    - assets/custom.css
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/arctyk-itsm

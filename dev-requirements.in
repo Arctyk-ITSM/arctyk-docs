@@ -1,0 +1,19 @@
+# Development dependencies for Arctyk Docs
+# Extends the base requirements.in
+
+-r requirements.in
+
+# --- Local authoring utilities ---
+mkdocs-localsearch
+mkdocs-awesome-pages-plugin
+mkdocs-redirects
+mkdocs-section-index
+linkchecker
+
+# --- Formatting & Linting ---
+black
+flake8
+djlint
+
+# --- Pre-commit Hooks ---
+pre-commit

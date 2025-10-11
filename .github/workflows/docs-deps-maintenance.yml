@@ -1,0 +1,129 @@
+name: Update Docs Dependencies
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Run weekly at 02:00 UTC every Monday
+    - cron: "0 2 * * 1"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-docs-dependencies:
+    name: Recompile, Build-Check, PR Comment, and Auto-Merge
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./docs
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Cache pip packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('docs/requirements.in', 'docs/dev-requirements.in') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install pip-tools
+        run: pip install pip-tools
+
+      - name: Compile base and dev dependencies
+        run: |
+          echo "Compiling docs/requirements.in → requirements.txt"
+          pip-compile --upgrade requirements.in
+          echo "Compiling docs/dev-requirements.in → dev-requirements.txt"
+          pip-compile --upgrade dev-requirements.in
+
+      - name: Check for changes
+        id: git_changes
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "changes_detected=true" >> $GITHUB_OUTPUT
+          else
+            echo "changes_detected=false" >> $GITHUB_OUTPUT
+          fi
+
+      # ---------- Build validation ----------
+      - name: Install MkDocs build dependencies
+        if: steps.git_changes.outputs.changes_detected == 'true'
+        run: pip install -r requirements.txt
+
+      - name: Validate MkDocs build
+        if: steps.git_changes.outputs.changes_detected == 'true'
+        run: |
+          echo "Validating MkDocs site build..."
+          mkdocs build --strict --verbose
+
+      # ---------- Prepare a summary comment (diff) ----------
+      - name: Generate PR summary comment
+        if: steps.git_changes.outputs.changes_detected == 'true'
+        run: |
+          {
+            echo "### Docs dependency update summary"
+            echo
+            echo "- MkDocs build: **passed**"
+            echo "- Lockfiles updated:"
+            echo "  - \`requirements.txt\`"
+            echo "  - \`dev-requirements.txt\`"
+            echo
+            echo "<details><summary><strong>Diff (context=0)</strong></summary>"
+            echo
+            # Show only changed lines without context to keep comment compact
+            git --no-pager diff --unified=0 -- requirements.txt dev-requirements.txt || true
+            echo
+            echo "</details>"
+          } > PR_COMMENT.md
+
+      # ---------- Create PR ----------
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore(docs): update dependency lockfiles"
+          branch: chore/docs-deps-update
+          title: "chore(docs): update documentation dependencies"
+          body: "Automated Docs Dependency Update. Recompiled lockfiles and verified MkDocs build."
+          labels: "automation,dependencies,docs"
+      
+
+      # ---------- Post summary comment to the PR ----------
+      - name: Post PR summary comment
+        if: steps.git_changes.outputs.changes_detected == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const body = fs.readFileSync('docs/PR_COMMENT.md', 'utf8');
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: Number("${{ steps.cpr.outputs.pull-request-number }}"),
+              body
+            });
+
+      # ---------- Enable auto-merge ----------
+      - name: Auto-merge dependency PR
+        if: steps.git_changes.outputs.changes_detected == 'true'
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          pull-request-number: "${{ steps.cpr.outputs.pull-request-number }}"
+          merge-method: squash
+      
+
+      - name: No changes detected
+        if: steps.git_changes.outputs.changes_detected == 'false'
+        run: echo "Dependencies are already up to date."

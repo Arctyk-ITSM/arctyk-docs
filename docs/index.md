@@ -48,7 +48,8 @@ Arctyk ITSM is composed of multiple repositories for scalability and clean separ
 
 | Repository | Purpose |
 |-------------|----------|
-| **arctyk-itsm** | Main Django application and backend services. |
+| **arctyk-itsm** | All applications and backend services. |
+| **arctyk-core**  | Core applications, ticketing System, user Mangement and backend services. |
 | **arctyk-docs** | Documentation and versioned release guides. |
 | **arctyk-ui** | Optional frontend or UI modules (if separated). |
 | **arctyk-deploy** | Deployment configurations (Docker, CI/CD pipelines). |
