@@ -20,6 +20,7 @@ arctyk/
 - `docker-compose down` # shutdown docker / stop app
 - `docker-compose down -v` # shutdown docker and remove volumes to reset the DB container
 - `docker-compose run web python src/manage.py migrate` # migrate the database to the container
+- `docker compose run web src/manage.py collectstatic --noinput`  # compiles static files
 
 If you updated dependencies, run `docker-compose build`.
 

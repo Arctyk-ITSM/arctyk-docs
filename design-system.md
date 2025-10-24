@@ -15,13 +15,13 @@ Displaying the date and time together: `date:"Y-m-d H:i"` outputs to `2025-07-21
 
 Example from ticket_detail.html: 
 
-```
+```html
 <p class="card-text"><strong>Created:</strong> {{ ticket.created_at|date:"M d, Y h:i a" }}</p>
-
 ```
 
 
 ## Bootstrap, SCSS & CSS
+Install Dart Sass: `npm install -g sass` if required.
 
 All custom CSS should be added to `STATIC_SRC/scss/_site.scss` or `STATIC_SRC/scss/app.scss`.
 
@@ -45,6 +45,10 @@ The `npm run build:css` command is defined in **package.json**. The the code bel
     "watch:css": "sass --load-path=node_modules --quiet-deps --watch STATIC_SRC/scss/app.scss:STATIC_SRC/css/app.css"
 }
 
+```
+
+```PowerShell
+sass --watch src/STATIC_SRC/scss/custom.scss:src/STATIC_SRC/css/custom.css
 ```
 
 ## JavaScript, Images & Other Static Files

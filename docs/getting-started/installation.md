@@ -12,14 +12,14 @@ By the end of this procedure, you’ll have the application running locally with
 - Clone the repo:
 
 ```bash
-git clone https://github.com/Arctyk-ITSM/arctyk.git
+git clone https://github.com/Arctyk-ITSM/arctyk-itsm.git
 cd arctyk
 ```
 ## Project Structure
 
 Your repo should look like this:
 
-```bash
+```markdown
 arctyk/
 ├── docker/                     # Docker-related files
 │   ├── web.Dockerfile          # Django + Gunicorn container
@@ -62,7 +62,7 @@ POSTGRES_PORT=5432
 # Static / Media
 STATIC_ROOT=/code/static
 MEDIA_ROOT=/code/media
-  ```
+```
   
 ## Docker Compose File
 
