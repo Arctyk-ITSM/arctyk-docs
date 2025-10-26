@@ -10,7 +10,7 @@ This repository contains the official documentation for **Arctyk ITSM**, a modul
 **v0.7.0-alpha.0**
 
 ## View the Documentation
-[https://arctyk-itsm.github.io/arctyk-docs/](https://arctyk-itsm.github.io/arctyk-docs/)
+[docs.arctyk.dev](https://docs.arctyk.dev)
 
 ## About
 Arctyk ITSM is a modern, modular platform built with Django and designed for IT departments of all sizes.  
@@ -18,7 +18,11 @@ Arctyk ITSM is a modern, modular platform built with Django and designed for IT 
 Documentation is managed using [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) and deployed automatically via GitHub Actions.
 
 ## Contributing
+Pleaes note that the Arctyk ITSM repos are not currently public. Contribution is provided by the Arctyk team.
+
 1. Clone this repo:
    ```bash
    git clone https://github.com/Arctyk-ITSM/arctyk-docs.git
    cd arctyk-docs
+   ```
+

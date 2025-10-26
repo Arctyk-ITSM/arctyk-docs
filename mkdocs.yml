@@ -57,13 +57,17 @@ nav:
       - Tickets: user-guide/tickets.md
       - Assets: user-guide/assets.md
       - Reports: user-guide/reports.md
+  - Components:
+      - Breadcrumbs: components/breadcrumbs.md
+      - Comments: components/comments.md
+      - Pagination: components/pagination.md
   - Developer Guide:
       - Architecture: developer-guide/architecture.md
       - API Reference: developer-guide/api-reference.md
       - Contributing: developer-guide/contributing.md
-      - Style Guide: developer-guide/style-guide.md
+      - Style Guide: developer-guide/documentation.md
       - Markdown Examples: developer-guide/markdown-examples.md
-      - GitHub: developer-guide/github.md
+      - GitHub Docs: developer-guide/github.md
       - Testing: developer-guide/testing.md
       - Changelog: developer-guide/changelog.md
   - Design:

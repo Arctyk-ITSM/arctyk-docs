@@ -1,6 +1,6 @@
 #Docs GitHub Setup
 
-Arctyk Docs is linked and versioned through the `arctyk-docs` repo.
+**Arctyk Docs** is linked and versioned through the `arctyk-docs` repo.
 
 ## Overview
 
