@@ -2,86 +2,102 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.arctyk.dev/</loc>
-         <lastmod>2025-10-25</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://docs.arctyk.dev/version/</loc>
-         <lastmod>2025-10-25</lastmod>
+         <lastmod>2025-10-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.arctyk.dev/components/breadcrumbs/</loc>
+         <lastmod>2025-10-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.arctyk.dev/components/comments/</loc>
+         <lastmod>2025-10-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.arctyk.dev/components/pagination/</loc>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://docs.arctyk.dev/design/branding/</loc>
-         <lastmod>2025-10-25</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://docs.arctyk.dev/design/ui-components/</loc>
-         <lastmod>2025-10-25</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://docs.arctyk.dev/developer-guide/api-reference/</loc>
-         <lastmod>2025-10-25</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://docs.arctyk.dev/developer-guide/architecture/</loc>
-         <lastmod>2025-10-25</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://docs.arctyk.dev/developer-guide/changelog/</loc>
-         <lastmod>2025-10-25</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://docs.arctyk.dev/developer-guide/contributing/</loc>
-         <lastmod>2025-10-25</lastmod>
+         <lastmod>2025-10-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.arctyk.dev/developer-guide/docker-reference/</loc>
+         <lastmod>2025-10-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.arctyk.dev/developer-guide/documentation/</loc>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://docs.arctyk.dev/developer-guide/github/</loc>
-         <lastmod>2025-10-25</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://docs.arctyk.dev/developer-guide/markdown-examples/</loc>
-         <lastmod>2025-10-25</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.arctyk.dev/developer-guide/style-guide/</loc>
-         <lastmod>2025-10-25</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://docs.arctyk.dev/developer-guide/testing/</loc>
-         <lastmod>2025-10-25</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://docs.arctyk.dev/getting-started/configuration/</loc>
-         <lastmod>2025-10-25</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://docs.arctyk.dev/getting-started/deployment/</loc>
-         <lastmod>2025-10-25</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://docs.arctyk.dev/getting-started/installation/</loc>
-         <lastmod>2025-10-25</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://docs.arctyk.dev/integrations/jira/</loc>
-         <lastmod>2025-10-25</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://docs.arctyk.dev/integrations/power-platform/</loc>
-         <lastmod>2025-10-25</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://docs.arctyk.dev/integrations/zendesk/</loc>
-         <lastmod>2025-10-25</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://docs.arctyk.dev/user-guide/assets/</loc>
-         <lastmod>2025-10-25</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://docs.arctyk.dev/user-guide/reports/</loc>
-         <lastmod>2025-10-25</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://docs.arctyk.dev/user-guide/tickets/</loc>
-         <lastmod>2025-10-25</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
 </urlset>
