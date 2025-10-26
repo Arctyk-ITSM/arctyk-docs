@@ -67,7 +67,6 @@ yarn-error.log*
 .env
 .env.*
 secrets.json
-CNAME
 
 # -----------------------------
 # Dependency management
