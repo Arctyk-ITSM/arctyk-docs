@@ -66,7 +66,7 @@ nav:
       - Assets: user-guide/assets.md
       - Reports: user-guide/reports.md
   - Features:
-      - Tickets: features/tickets/recurring_tickets.md
+      - Tickets: features/recurring_tickets.md
   - Components:
       - Breadcrumbs: components/breadcrumbs.md
       - Comments: components/comments.md
