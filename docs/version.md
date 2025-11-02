@@ -7,7 +7,7 @@ We follow **[Semantic Versioning 2.0.0](https://semver.org/)** with added stage 
 
 ## Current baseline
 
-`v0.3.0-dev.0'
+`v0.3.0-dev.0`
 
 ---
 

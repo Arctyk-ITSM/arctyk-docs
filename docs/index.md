@@ -87,8 +87,3 @@ To begin exploring Arctyk ITSM, start with these guides:
 Arctyk ITSM is released under the **MIT License**. Contributions are welcome and encouraged.  
 Developers can submit pull requests for both the core platform and documentation repositories.  
 For contribution guidelines, see the `CONTRIBUTING.md` file in each repository.
-
----
-
-**Current Version:** v0.7.0-alpha.0  
-**Documentation Source:** [https://github.com/Arctyk-ITSM/arctyk-docs](https://github.com/Arctyk-ITSM/arctyk-docs)

@@ -65,6 +65,8 @@ nav:
       - Tickets: user-guide/tickets.md
       - Assets: user-guide/assets.md
       - Reports: user-guide/reports.md
+  - Features:
+      - Tickets: features/recurring_tickets.md
   - Components:
       - Breadcrumbs: components/breadcrumbs.md
       - Comments: components/comments.md
@@ -91,11 +93,11 @@ extra:
   cname: docs.arctyk.dev  # ensures CNAME auto-included in gh-pages builds
   version:
     provider: manual
-    number: 0.7.0-alpha.0
+    number: 0.3.0-dev.0
     badge:
-      text: "v0.7.0-alpha.0"
+      text: "v0.3.0-dev.0"
       color: blue
-    banner: "This is documentation for an alpha release. Features may change before the final release."
+    banner: "This is documentation for a development release. Features may change before the final release."
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/Arctyk-ITSM/
